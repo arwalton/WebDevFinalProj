@@ -1,0 +1,131 @@
+
+/*---------------Common CSS--------------*/
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    width: 100%; 
+    min-height: 100vh;
+    padding: 0;
+    background: hsl(37, 79%, 75%);
+    background: linear-gradient(0deg, hsl(13, 68%, 63%) 0%, hsl(37, 79%, 75%) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+}
+
+:root {
+    --gutter: 20px;
+}
+
+.app {
+    padding: var(--gutter) 0;
+    display: grid;
+    grid-gap: var(--gutter) 0;
+    grid-template-columns: 
+        var(--gutter)
+        1fr
+        var(--gutter);
+        align-content: start;
+}
+
+.app > *{
+    grid-column: 2 / -2;
+}
+
+.app > .full {
+    grid-column: 1 / -1;
+}
+
+/*----------------Header CSS--------------*/
+header {
+    background: hsl(54, 50%, 96%);
+    top: 0;
+    position: sticky;
+    width: 100%;
+}
+
+nav{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.nav-link-wrapper{
+    display: grid;
+    text-align: center;
+    text-justify: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link-wrapper a:link{
+    text-decoration: none;
+}
+
+.nav-link-wrapper a:visited{
+    text-decoration: none;
+}
+
+.nav-link-wrapper a:hover{
+    background-color: hsl(54, 50%, 80%);
+}
+
+.nav-link-wrapper a:active{
+    background-color: hsl(54, 50%, 70%)
+}
+
+.nav-link-wrapper p{
+    font-size: small;
+    color: hsl(234, 20%, 30%);
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+
+.nav-icon{
+    font-size: xx-large;
+    color: hsl(234, 20%, 30%);
+    margin: 0;
+    padding: 5px 0 0 0;
+}
+
+/*-------------index CSS------------*/
+.scroll-wrapper{
+    display: grid;
+    grid-gap: calc(var(--gutter) / 2);
+    grid-template-columns: 
+        10px
+        repeat(var(--total), calc(50% - var(--gutter) * 2))
+        10px;
+    grid-template-rows: minmax(150px, 1fr);
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    padding-bottom: calc(.75 * var(--gutter));
+    margin-bottom: calc(-.25 * var(--gutter));
+}
+
+.scroll-wrapper::before,
+.scroll-wrapper::after {
+    content: '';
+}
+
+.scroll-wrapper > li,
+.item {
+    scroll-snap-align: center;
+    padding: calc(var(--gutter) / 2 * 1.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+}
+
+.card {
+    background:hsl(234, 20%, 30%);
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}

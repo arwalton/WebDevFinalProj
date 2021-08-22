@@ -2,39 +2,49 @@
 
 <html lang=eng>
   
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Free Code Camp Helsinki</title>
-  <meta name="description" content="Animal theme park website" />
-  <!--Just a little homage to Terry Pratchett-->
-  <!--This will fail the w3c validator, but it's a known issue.-->
-  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-  <link rel="stylesheet" href="Stylesheets/style.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Free Code Camp Helsinki</title>
+  
+    <!--Include handlebars.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" 
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+    <!--Include Font Awesome-->
+    <script src="https://kit.fontawesome.com/3c500845f7.js" crossorigin="anonymous"></script>
+  
+    <meta name="description" content="Demo site for Free Code Camp Helsinki" />
+    <!--Just a little homage to Terry Pratchett-->
+    <!--This will fail the w3c validator, but it's a known issue.-->
+    <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+    <link rel="stylesheet" href="stylesheets/style.css">
+  </head>
 
 <body>
   <header>
-    <nav>
+    <nav id="nav">
         <div class="nav-link-wrapper">
-          <a href="index.html">Home</a>
+          <a href="index.html"><i class="fas fa-home nav-icon"></i><p class="navText">Home</p></a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="meetups.html">Meetups</a>
+          <a href="meetups.html"><i class="fas fa-users nav-icon"></i><p class="navText">Meetups</p></a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="challenges.html">Challenges</a>            
+          <a href="challenges.html"><i class="fas fa-question-circle nav-icon"></i><p class="navText">Challenges</p></a>            
         </div>
         <div class="nav-link-wrapper">
-          <a href="articles.html">Articles</a>
+          <a href="articles.html"><i class="fas fa-newspaper nav-icon"></i><p class="navText">Articles</p></a>
         </div>
         <div class="nav-link-wrapper">
-          <a href="jobs.html">Jobs</a>
+          <a href="jobs.html"><i class="fas fa-building nav-icon"></i><p class="navText">Jobs</p></a>
         </div>
     </nav>
   </header>
 
-  <main>
+  <main class="app">
 
   </main>
 
