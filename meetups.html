@@ -45,10 +45,23 @@
   </header>
 
   <main class="app">
+    <iframe id="meetup-calendar"
+      title="Meetup Calendar"
+      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FHelsinki&src=NXZjcmkxdGRzZHJydDBzY2JudWQ0Y2VwZ3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23F4511E"
+      scrolling="no"></iframe>
 
+      <ul id="meetups-list">
+        <script id="previous-meetups" type="text/x-handlebars-template">
+          {{#each meetup}}
+            <li class="meetup">{{this}}</li>
+          {{/each}}
+        </script>
+      </ul>
   </main>
 
   <footer>
+    <!--Run main.js first to do all the handlebars templating-->
+    <script src="scripts/main.js"></script>
     
   </footer>
 </body>

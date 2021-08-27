@@ -31,12 +31,67 @@ body {
         align-content: start;
 }
 
-.app > *{
+.app > *{    
     grid-column: 2 / -2;
 }
 
 .app > .full {
     grid-column: 1 / -1;
+}
+
+.app > div{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+   margin: auto;
+   padding: 0;
+   text-align: center;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 2em;
+   color: hsl(234, 20%, 15%);
+}
+
+
+h2{
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 1.5em;
+   color: hsl(234, 20%, 15%);
+}
+
+h3{
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 1.2em;
+   color: hsl(234, 20%, 15%);
+}
+
+p{
+   margin: 0;
+   padding: 0;
+   font-family: Arial, Helvetica, sans-serif;
+   color: hsl(234, 20%, 15%);
+}
+
+p > a:link{
+    color:hsl(234, 20%, 25%);
+}
+
+p > a:active{
+    color:hsl(234, 20%, 50%);
+}
+
+hr{
+    width: 90%;
+    height: 2px;
+    border-width: 1px;
+    border-color: hsl(234, 20%, 15%);
+    margin: auto;
+    padding: 0;
 }
 
 /*----------------Header CSS--------------*/
@@ -45,6 +100,7 @@ header {
     top: 0;
     position: sticky;
     width: 100%;
+    z-index: 10000;
 }
 
 nav{
@@ -100,9 +156,29 @@ nav{
         10px;
     grid-template-rows: minmax(150px, 1fr);
     overflow-x: scroll;
-    scroll-snap-type: x proximity;
+    overflow-y: hidden;
+    margin-top: 0px;
     padding-bottom: calc(.75 * var(--gutter));
     margin-bottom: calc(-.25 * var(--gutter));
+    /*click and drag scroll*/
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    user-select: none;
+    cursor: pointer;
+    /*hide scroll bar*/
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scroll-wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.scroll-wrapper.active{
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
 }
 
 .scroll-wrapper::before,
@@ -128,4 +204,51 @@ nav{
 ul{
     list-style: none;
     padding: 0;
+}
+
+#jobs-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(151, 28%, 70%);
+    color:hsl(234, 20%, 15%);
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    border: 5px solid hsl(234, 20%, 70%);
+    border-radius: 10px;
+    padding: 10px;
+
+    -webkit-transition: background-color 100ms linear;
+    -moz-transition: background-color 100ms linear;
+    -o-transition: background-color 100ms linear;
+    -ms-transition: background-color 100ms linear;
+    transition: background-color 100ms linear;
+}
+
+a:link#jobs-link{
+    text-decoration: none;
+}
+
+a:visited#jobs-link{
+    text-decoration: none;
+}
+
+a:hover#jobs-link{
+    background-color: hsl(234, 20%, 70%);
+}
+
+a:active#jobs-link{
+    border-color: transparent;
+    background-clip: padding-box;
+}
+
+/*------------meetups CSS-------------*/
+#meetup-calendar{
+    height: 400px;
+    width: 100%;
+    margin: auto;
+    border: 1px solid hsl(234, 20%, 15%)
 }

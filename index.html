@@ -46,7 +46,8 @@
 
   <main class="app">
     <h1>Welcome to Free Code Camp Helsinki</h1>
-    <h2>Meetups</h2>
+    <hr>
+    <h2>Upcoming Meetups</h2>
     <ul id="meetup-scroll" class="scroll-wrapper full"></ul>
       <script id="scroll-template" type="text/x-handlebars-template">
         {{#each meetupList}}
@@ -55,29 +56,49 @@
       </script>
     </ul>
 
-    <h2>Jobs</h2>
-    <div id="jobs">Job info here</div>
+    <hr>
 
-    <h2>Check out this week's coding challenge</h2>
-    <div id="challenge">Coding challeng info here</div>
+    <a id="jobs-link" href="jobs.html">Check out the latest jobs near
+      Helsinki</a>
+    
+    <hr>
 
-    <h2>Articles</h2>
-    <div id="articles">Click here for articles</div>
+    <h2>This week's coding challenge</h2>
+    <h3>Remove duplicates:</h3>
+    <p>
+      You are given a pointer to the head of a sorted,
+      single-linked list. The task is to remove any nodes with
+      duplicate values, so that each element only appears once in
+      the list. Find out more on our
+      <a href="challenges.html">challenges</a> page!
+    </p>
+
+    <hr>
+
+    <h2 id="article-heading">Random Article</h2>
+      <script id="random-article" type="text/x-handlebars-template">
+        <h3>{{current.title}}</h3>
+        <p>{{current.content}}
+          <a id="article-link" href="articles.html">
+            ...continue reading
+          </a>
+        </p>
+      </script>
+    <hr id="article-hr">
 
     <h3>About us</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra
-      porta urna sit amet semper. Nullam posuere, ipsum in ultrices vehicula,
-      dui tellus volutpat ante, a vestibulum tortor ligula id neque. Donec eu
-      sollicitudin nulla, vitae varius orci. Fusce fringilla, nibh sit amet
-      elementum pellentesque, felis risus aliquet felis, eget lacinia nunc
-      tortor vitae lorem. Praesent interdum dolor eu purus condimentum
-      condimentum. Fusce lorem quam, convallis id est ut, varius volutpat
-      ligula. Nullam vulputate nibh vitae ipsum fringilla, ut sodales enim
-      malesuada. Etiam ultricies mauris a arcu efficitur tincidunt. Quisque
-      aliquam lobortis sapien, vitae pellentesque ante tempus sed. Phasellus
-      a laoreet diam. Aenean congue ipsum augue, eu semper nisi
-      consectetur a.</p>
+    <p>
+      Free Code Camp Helsinki is interested in helping people pay
+      more taxes. Specifically, we want to help you get an awesome,
+      well-paying job as a developer. We meet together every
+      couple weeks to learn the skills you need to start a new
+      career in software development.
 
+      We are not officially affiliated with freecodecamp.com, but we
+      love the work that they do and often send our members their way.
+      They have fantastic resources over there, so check them out if
+      you haven't already!
+    </p>
 
   </main>
 
