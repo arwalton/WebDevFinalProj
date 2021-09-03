@@ -1,0 +1,7 @@
+HTML stands for Hyper Text Markup Language. It is a language for converting ASCII characters that are often compared to Markup marks. It is also the language that some document developers are using to translate Markup marks into other forms. For the best, you can refer to wikipedia that is based on this data.
+
+How to make this document work
+
+Use this document to create an HTML page or HTML element. The document is the template which contains the HTML that will be used when writing this markup. For example:
+
+<div id="head"> <h2>Hello there! <img src="//ajr-example.net.net/?s=v2b3l"> <span class="title"> <img src="//hvw5b-example-group.com/?s=v25i9w"> </span> </h2> </div> <div id="body"> <h2>Hello there!</h2> <button onClick="form.click_to_form ( this )">Create a form to take on text and images.</button> <button onClick="form.click_to_form ( this )">Create an image to take on text and images.</button</form> </div> </div> <div class="form"> ( <a href="../css/css.min.css" class="texteditor-form">html.css</a>

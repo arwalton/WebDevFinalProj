@@ -45,11 +45,32 @@
   </header>
 
   <main class="app">
-
+    <h1>Articles</h1>
+    <div id="topic-menu">
+      <h2>Pick a topic to view related articles.</h2>
+      <ul id="topic-list">
+        <li><button>View all</button></li>
+        <li><button>Coding languages</button></li>
+        <li><button>Coding resources</button></li>
+        <li><button>Interview prep</button></li>
+        <li><button>Job search</button></li>
+      </ul>
+    </div>
+    <div id=article-wrapper>
+      <h2>Articles</h2>
+      <div id="articles">
+      <script id="article-script" type="text/x-handlebars-template">
+        {{#each article}}
+          <h3>{{this.title}}</h3>
+          <p>{{this.text}}</p>
+        {{/each}}
+      </script>
+    </div>
+    </div>
   </main>
 
   <footer>
-    
+    <script src="scripts/articles.js"></script>
   </footer>
 </body>
 

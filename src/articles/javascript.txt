@@ -1,0 +1,15 @@
+Javascript is a scripting language that is open sourced and has no copyright or liability policy.
+
+The authors use a fully functional web browser as browser (F5), but only allow JavaScript to connect, and have JavaScript libraries on an offline basis. In some instances, we can access existing JavaScript files from our desktop.
+
+All other libraries on the web are used for debugging on different versions of Javascript, and we rely on them when we're working on our work. We only allow third party libraries such as libhtml3 or libhtml1.
+
+Note: This is not the first time C-Script has been used in JavaScript. Our own team published its own C-Script on Github, and I have been trying to work up a good C++ project.
+
+Coding Standards
+
+If you're wondering how to compile JavaScript, there are some things to remember to check out. We've just written 3rd party C# libraries, some JS.html and some scripts which I highly recommend downloading in full size if you don't have access to external libraries. There's only so much you can do, so do your own homework and check the code out.
+
+If the code is the main part of your work then (but don't take this seriously, really unless that is the case) the final code can be found on Github.
+
+Some of my favourite libraries include http.io, pyline, javascript, ctypes and libdomains.

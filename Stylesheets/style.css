@@ -282,3 +282,40 @@ a:active#jobs-link{
     margin-bottom: 0;
     text-decoration: underline;
 }
+
+/*-----------challenges CSS------------*/
+/*TODO, clip the image Properly. Might be easier to edit it outside and pre-cut it.*/
+figure img{
+    width: 100%;
+    clip-path: polygon(10% 10%,90% 10%,90% 90%,10% 90%);
+}
+
+#hint-wrapper h3{
+    margin-bottom: 15px;
+}
+
+.accordion-hint{
+    background-color: hsl(234, 20%, 70%);
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+}
+
+.accordion-hint.active{
+    background-color: hsl(234, 20%, 50%);
+}
+
+.hint {
+    padding: 0 15px;
+    background-color:hsl(54, 50%, 90%);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.hint>p{
+    padding: 15px;
+}

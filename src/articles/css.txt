@@ -1,0 +1,9 @@
+CSS is used to style webpages. The styles define a set of rules for the page to be displayed on, and if there is no web page, an update will be made to every page that is found there.
+
+This can be done either via <img src="/^css-theme/css-image.jpg" /> or <img src="/^css-theme/css-image-small.png" /> .
+
+CSS styles provide a set of rules for using CSS content. One of the rules is the use of the font name, e.g. <font type="bold"> , which takes care of font color information.
+
+Style names generally do not need to be extended or altered, you can just use the values described above when creating the style and setting up CSS.
+
+Note that HTML styling can be hard to understand, so HTML elements and values must still be treated as HTML objects, and CSS may behave differently in some cases. For more information see: https://wiki.w3.org/Style-Types.
