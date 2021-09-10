@@ -47,22 +47,29 @@
   <main class="app">
     <h1>Welcome to Free Code Camp Helsinki</h1>
     <hr>
-    <h2>Upcoming Meetups</h2>
+    <div>
+    <a id="meetup-main-link" href="meetups.html">
+      <h2>Upcoming Meetups</h2>
+    </a>
+
     <ul id="meetup-scroll" class="scroll-wrapper full"></ul>
       <script id="scroll-template" type="text/x-handlebars-template">
         {{#each meetupList}}
-          <li class="card">{{this}}</li>
+          <li class="card">
+            <h3>{{this.date}}</h3>
+            <p>{{this.info}}</p>
+          </li>
         {{/each}}
       </script>
     </ul>
-
-    <hr>
-
+  </div>
+    <div id="job-div">
     <a id="jobs-link" href="jobs.html">Check out the latest jobs near
       Helsinki</a>
     
-    <hr>
+    </div>
 
+    <div id="coding-challenge">
     <h2>This week's coding challenge</h2>
     <h3>Remove duplicates:</h3>
     <p>
@@ -72,10 +79,10 @@
       the list. Find out more on our
       <a href="challenges.html">challenges</a> page!
     </p>
+    </div>
 
-    <hr>
-
-    <h2 id="article-heading">Random Article</h2>
+    <div id="article-div">
+    <h2 id="article-heading">Featured Article</h2>
       <script id="random-article" type="text/x-handlebars-template">
         <h3>{{current.title}}</h3>
         <p>{{current.content}}
@@ -84,8 +91,10 @@
           </a>
         </p>
       </script>
-    <hr id="article-hr">
 
+  </div>
+
+  <div id="about-us">
     <h3>About us</h3>
     <p>
       Free Code Camp Helsinki is interested in helping people pay
@@ -99,7 +108,7 @@
       They have fantastic resources over there, so check them out if
       you haven't already!
     </p>
-
+  </div>
   </main>
 
   <footer>
