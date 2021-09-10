@@ -45,7 +45,20 @@
   </header>
 
   <main class="app">
+    <h1>Latest job postings</h1>
+    <h2>Here are the lastest job postings from te-palvelut.fi for junior developers</h2>
+    <!--This script pulls an rss feed from rss.bloople.net for the Finnish jobs
+        website te-palvelut.fi. It includes these hooks for styling:
+        The title is in <h3 class="feed-title"> tag.
+        The description is in <p class="feed-desc">.
+        The icon is in <img class="feed-title-image">.
+        Each feed item title is in <h4 class="feed-item-title">.
+        Each feed item description is in <p class="feed-item-desc">.
+      -->
+    <script src="//rss.bloople.net/?url=https%3A%2F%2Fpaikat.te-palvelut.fi%2Ftpt-api%2Ftyopaikat.rss%3Fhakusana%3Djunior%2520developer%26hakusanakentta%3Dsanahaku%26ilmoitettuPvm%3D1%26vuokrapaikka%3D---&limit=10&showtitle=false&type=js"></script>
 
+    <h3>If you can't see the postings, you can check them out through this link:</h3>
+    <p><a href="https://paikat.te-palvelut.fi/tpt/?searchPhrase=junior%20developer&announced=0&leasing=0&english=false&sort=1">te-palvelut.fi</a></p>
   </main>
 
   <footer>

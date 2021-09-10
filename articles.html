@@ -49,20 +49,21 @@
     <div id="topic-menu">
       <h2>Pick a topic to view related articles.</h2>
       <ul id="topic-list">
-        <li><button>View all</button></li>
-        <li><button>Coding languages</button></li>
-        <li><button>Coding resources</button></li>
-        <li><button>Interview prep</button></li>
-        <li><button>Job search</button></li>
+        <li><button type="button" id="view-all" class="topic-button active">View all</button></li>
+        <li><button type="button" id="coding-languages" class="topic-button">Coding languages</button></li>
+        <li><button type="button" id="coding-resources" class="topic-button">Coding resources</button></li>
+        <li><button type="button" id="interview-prep" class="topic-button">Interview prep</button></li>
+        <li><button type="button" id="job-search" class="topic-button">Job search</button></li>
       </ul>
     </div>
     <div id=article-wrapper>
-      <h2>Articles</h2>
       <div id="articles">
       <script id="article-script" type="text/x-handlebars-template">
         {{#each article}}
-          <h3>{{this.title}}</h3>
-          <p>{{this.text}}</p>
+          <div class="article-wrapper {{this.class}} show view-all">
+            <h3>{{this.title}}</h3>
+            <p>{{this.text}}</p>
+          </div>
         {{/each}}
       </script>
     </div>

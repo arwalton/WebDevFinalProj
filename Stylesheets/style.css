@@ -319,3 +319,48 @@ figure img{
 .hint>p{
     padding: 15px;
 }
+
+/*----------------Articles CSS---------------*/
+
+/*TODO style articles and cards*/
+
+#articles{
+    overflow: hidden;
+}
+
+.article-wrapper{
+    display: none; /* default is hidden */
+}
+
+/* the show class is toggled on elements as they are filtered */
+.show{
+    display: block;
+}
+
+#topic-list{
+    display: grid;
+    grid-template-columns: 5px repeat(5, 1fr) 5px;
+    grid-gap: 10px
+}
+
+#topic-list::before,
+#topic-list::after{
+    content:'';
+}
+
+.topic-button{
+    background-color: hsl(234, 20%, 50%);
+    color: hsl(54, 50%, 90%);
+    width: 100%;
+    height: 50px;
+    font-size: .9em;
+}
+
+.topic-button.active,
+.topic-button:hover{
+    background-color: hsl(234, 20%, 30%);
+}
+
+/*---------------Jobs CSS---------------*/
+
+
