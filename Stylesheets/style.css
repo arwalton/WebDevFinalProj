@@ -403,8 +403,6 @@ figure img{
 
 /*----------------Articles CSS---------------*/
 
-/*TODO style articles and cards*/
-
 #articles{
     overflow: hidden;
 }
@@ -449,6 +447,34 @@ figure img{
 .topic-button.active,
 .topic-button:hover{
     background-color: hsl(234, 20%, 30%);
+}
+
+@media only screen and (min-width: 600px){
+    #topic-menu{
+        grid-column: 2 / 3;
+        display: grid;
+        grid-template-areas: 
+        'title'
+        'list';
+        border-right: 1px solid black;
+        grid-auto-rows: min-content;
+    }
+
+    #topic-menu > h2{
+        grid-area: 'title';
+        width: 95%;
+    }
+    
+    #article-wrapper{
+        grid-column: 3 / -2;
+    }
+
+    #topic-list{
+        grid-area: 'list';
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 50px);
+        width: 90%
+    }
 }
 
 /*---------------Jobs CSS---------------*/
