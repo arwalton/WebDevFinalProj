@@ -1,70 +1,92 @@
 <!DOCTYPE html>
 
-<html lang=eng>
-  
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Free Code Camp Helsinki</title>
-  
+
     <!--Include handlebars.js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" 
-    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!--Include Font Awesome-->
-    <script src="https://kit.fontawesome.com/3c500845f7.js" crossorigin="anonymous"></script>
-  
+    <script
+      src="https://kit.fontawesome.com/3c500845f7.js"
+      crossorigin="anonymous"
+    ></script>
+
     <meta name="description" content="Demo site for Free Code Camp Helsinki" />
     <!--Just a little homage to Terry Pratchett-->
     <!--This will fail the w3c validator, but it's a known issue.-->
     <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
 
-<body>
-  <header>
-    <nav id="nav">
+  <body>
+    <header>
+      <nav id="nav">
         <div class="nav-link-wrapper">
-          <a href="index.html"><i class="fas fa-home nav-icon"></i><p class="navText">Home</p></a>
+          <a href="index.html"
+            ><i class="fas fa-home nav-icon"></i>
+            <p class="navText">Home</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="meetups.html"><i class="fas fa-users nav-icon"></i><p class="navText">Meetups</p></a>
+          <a href="meetups.html"
+            ><i class="fas fa-users nav-icon"></i>
+            <p class="navText">Meetups</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="challenges.html"><i class="fas fa-question-circle nav-icon"></i><p class="navText">Challenges</p></a>            
+          <a href="challenges.html"
+            ><i class="fas fa-question-circle nav-icon"></i>
+            <p class="navText">Challenges</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="articles.html"><i class="fas fa-newspaper nav-icon"></i><p class="navText">Articles</p></a>
+          <a href="articles.html"
+            ><i class="fas fa-newspaper nav-icon"></i>
+            <p class="navText">Articles</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="jobs.html"><i class="fas fa-building nav-icon"></i><p class="navText">Jobs</p></a>
+          <a href="jobs.html"
+            ><i class="fas fa-building nav-icon"></i>
+            <p class="navText">Jobs</p></a
+          >
         </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main class="app">
-    <h1>Latest job postings</h1>
-    <h2>Here are the lastest job postings from te-palvelut.fi for junior developers</h2>
-    <!--This script pulls an rss feed from rss.bloople.net for the Finnish jobs
-        website te-palvelut.fi. It includes these hooks for styling:
-        The title is in <h3 class="feed-title"> tag.
-        The description is in <p class="feed-desc">.
-        The icon is in <img class="feed-title-image">.
-        Each feed item title is in <h4 class="feed-item-title">.
-        Each feed item description is in <p class="feed-item-desc">.
-      -->
-    <script src="//rss.bloople.net/?url=https%3A%2F%2Fpaikat.te-palvelut.fi%2Ftpt-api%2Ftyopaikat.rss%3Fhakusana%3Djunior%2520developer%26hakusanakentta%3Dsanahaku%26ilmoitettuPvm%3D1%26vuokrapaikka%3D---&limit=10&showtitle=false&type=js"></script>
+    <main class="app">
+      <h1>Latest job postings</h1>
+      <h2>
+        Here are the lastest job postings from te-palvelut.fi for junior
+        developers
+      </h2>
+      <div id="jobs-div">
+        <!--This div will be filled by the results from the Finnish government jobs
+      site using the jobs.js script-->
+      </div>
+      <h3>
+        If you can't see the postings, try again in a few minutes. You can also
+        check them out through this link:
+      </h3>
+      <p>
+        <a
+          href="https://paikat.te-palvelut.fi/tpt/?searchPhrase=junior%20developer&announced=0&leasing=0&english=false&sort=1"
+          >te-palvelut.fi</a
+        >
+      </p>
+    </main>
 
-    <h3>If you can't see the postings, you can check them out through this link:</h3>
-    <p><a href="https://paikat.te-palvelut.fi/tpt/?searchPhrase=junior%20developer&announced=0&leasing=0&english=false&sort=1">te-palvelut.fi</a></p>
-  </main>
-
-  <footer>
-    
-  </footer>
-</body>
-
-
+    <footer>
+      <script src="scripts/jobs.js"></script>
+    </footer>
+  </body>
 </html>

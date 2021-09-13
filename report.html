@@ -1,0 +1,178 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Free Code Camp Helsinki</title>
+
+    <!--Include handlebars.js-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!--Include Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/3c500845f7.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <meta name="description" content="Demo site for Free Code Camp Helsinki" />
+    <!--Just a little homage to Terry Pratchett-->
+    <!--This will fail the w3c validator, but it's a known issue.-->
+    <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div id="report-div">
+      <h1>Large Coursework: Final webpage design</h1>
+      <p><strong>Name: </strong>Adam Walton</p>
+      <br />
+      <p>
+        <strong>Introduction: </strong>What is the essential story being told by
+        your site and what type of structure did you choose to implement.
+      </p>
+      <br />
+      <p>
+        My website is meant as a newsletter and homepage for the group Free Code
+        Camp Helsinki (FCC Helsinki). It’s a local group that meets together
+        regularly to teach people how to code for free. It has only existed for
+        a couple years, but they have already had several of their members with
+        no coding experience get good junior developer jobs.<br /><br />The site
+        includes a home page, a page with articles about coding topics, a page
+        with a weekly coding challenge, a page listing upcoming and previous
+        meetups, and a page for job searching.<br /><br />As per the
+        requirements, my html pages are all on the top level of the tree and
+        none of them are children of the main page. I also have folders for
+        scripts, project materials (which only contains attributions right now),
+        source (src), and stylesheets.
+      </p>
+      <br />
+      <p>
+        <strong
+          >State 3 things that have inspired you when creating your website. </strong
+        >These could include guest speakers, other websites, artists, developers
+        etc.
+      </p>
+      <p>
+        <ol>
+          <li>A friend of mine is one of the administrators of FCC Helsinki, and he’s very enthusiastic about the group, but right now all they have is a Facebook page.
+          </li>
+          <li>I looked at the freecodecamp.org site, and I appreciate the clean, spare design. I tried to replicate some aspects of it in my site design.
+          </li>
+          <li>I have previously done a lot of coding questions on leetcode.com. The idea for including a question came from my experience on that site.
+          </li>
+        </ol>
+      </p>
+      <p><strong>State 3 ways in which your site is accessible. </strong></p>
+      <p>
+        <ol>
+          <li>All images incorporate descriptive alt-text to aid vision-impaired users. The image on the main page that is just decorative has an intentionally empty alt-text, as espoused in W3C web accessibility initiative, while the image on the challenges page has a descriptive alt-text to aid with understanding.</li>
+          <li>Most of the written content is dark text on a light background, with a contrast ratio of 15.17:1 according to https://webaim.org/resources/contrastchecker/
+          </li>
+          <li>The site is designed so that keyboard-only users can navigate effectively by tabbing through all items and links. The accordion menu on the challenges page can be opened and closed by tabbing to an item and pressing enter.
+          </li>
+          <li>All moving content is fully user-controllable, so that users can avoid distraction and sensory overload.
+          </li>
+        </ol>
+      </p>
+      <p><strong>State 3 ways in which you have considered usability in your site. </strong></p>
+      <p>
+        <ol>
+          <li>The main menu has both pictures and text for navigation. In addition, I chose not to use a hamburger menu so that the navigation options would be immediately clear to the user.
+          </li>
+          <li>I incorporated subtle feedback cues to the user when interacting with the site. This shows up in a slight enlarging of the horizontal scroll when it is clicked, as well as space on the sides of the scroll to show that there is additional content. There are also a variety of subtle effects to show when buttons are clicked or different filter options are selected.
+          </li>
+          <li>I chose to use a relatively conservative design for the site, so that the menus and options are presented in ways that are familiar to a user.
+          </li>
+        </ol>
+      </p>
+      <p><strong>State 3 things you had to learn/find out by yourself when creating your site, and describe how you did that </strong>(i.e. what searches you did, any new tools/techniques you learned, any changes/adaptations you made to a particular resource to make it work with your site).</p>
+      <br>
+      <p>In general, my process was similar for learning how to do new things. I would search online using various keywords, and try to find an example where they do something similar. I also found it useful to add new code one line at a time and use console.log to see what the effect was.
+        <ol>
+          <li>I had not used the javascript fetch function before this project. I ended up doing a lot of searching for things like “how to parse an rss feed javascript” and variations like that.
+          </li>
+          <li>Even seeing the videos for using handlebars, I still spent a lot of time searching online for “handlebars basics” and “handlebars examples” in order to help myself understand exactly how to use them.
+          </li>
+          <li>In CSS, this is a small thing, but I spend a long time trying to create the effect that I wanted on the main page link to the jobs page. I knew that there was a property to let me make the border disappear, and I probably could have just changed the border color, but I ended up reading a lot of information on w3schools about all the different properties, and I found the background-clip: padding-box property that let me get the effect that I wanted.
+          </li>
+        </ol>
+      </p>
+      <p><strong>What aspect(s) of your work do you think worked well and why? </strong></p>
+      <p>I’m pleased that I was able to get a real rss feed from a site and parse it to display the results. I went through several different solutions, and I’m very happy with how that ended up.
+
+        I also feel like I was able to use handlebars.js effectively to build the website and simplify the html. It is very satisfying to create the objects in js and see them created as functional html.
+      </p>
+      <p><strong>What aspect(s) of your work could be improved, and how might you do things differently another time? </strong></p>
+      <p>In parsing the rss feed, I did something weird so that there is some html that it reads as a string and not as actual html. I think I could fix that bug with a little more time, but it might require doing some more substantial refactoring and re-thinking.
+
+        I’m also not thrilled with how the website looks. I feel like the design process was challenging for me to create something that looks good. It’s definitely functional, but I would have benefited from consulting someone with more design sense and experience.
+      </p>
+      <br>
+      <p><strong>What resources were used when creating your work? </strong>You should list here any sources of information, libraries, plug-ins or other code that you used to create your site. You should also reference any code you've used by inserting comments at the start of the scripts. 
+      </p>
+      <br>
+      <p><em>The photos used in this website were downloaded from Unsplash:</em><br>
+        C. Gower, ‘Laptop with code’, 2017[Online]. Available: https://unsplash.com/photos/m_HRfLhgABo [Accessed 16- Aug- 2021].
+        <br><br>
+        <em>Color Palette designed using coolors.co</em><br>
+        F. Bianchi, ‘Create a palette - Coolers’, Unknown[Online]. Available: https://coolors.co/f4f1de-e07a5f-3d405b-81b29a-f2cc8f [Accessed 15- Aug- 2021].
+        <br><br>
+        <em>Horizontal scrolling info:</em><br>
+        D. Vinther, 'Creating horizontal scrolling containers the right was [CSS Grid]', 2018[Online]. Available: https://uxdesign.cc/creating-horizontal-scrolling-containers-the-right-way-css-grid-c256f64fc585
+        [Accessed 24- Aug- 2021].
+        <br>
+        D. Ionut, ‘Horizontal Click and Drag Scrolling with JS’, Unknown[Online]. Available: https://codepen.io/thenutz/pen/VwYeYEE [Accessed 25- Aug- 2021].
+        <br><br>        
+        <em>I referred regularly to the codecademy handlebars cheatsheet</em><br>
+        Codecademy.com, ‘Templating with Handlebars cheatsheet’, 2021[Online]. Available: https://www.codecademy.com/learn/learn-handlebars/modules/templating-with-handlebars/cheatsheet [Accessed 20- Aug- 2021].
+        <br><br>       
+        <em>The coding problem is heavily based on this one from leetcode.</em><br>
+        Leetcode.com, ‘Removing duplicates from a sorted list’, Unknown[Online]. Available: https://leetcode.com/problems/remove-duplicates-from-sorted-list/ [Accessed 01- Sept-2021].
+        <br><br>        
+        <em>Accordion for hints based on:</em><br>
+        W3schools.com, ‘How TO - Collapsibles/Accordion’, 2021[Online]. Available: https://www.w3schools.com/howto/howto_js_accordion.asp [Accessed 05- Sept- 2021].
+        <br><br>
+        <em>The articles for the site were generated by AI.</em> I wrote the first sentence or two and fed them into a text generator to get the word salad you can read on this site.<br>
+        Deepai.org, ‘Text Generation API’, 2019[Online]. Available: https://deepai.org/machine-learning-model/text-generator [Accessed 09- Sept- 2021].
+        <br><br>
+        <em>I used this site to learn how to pull and render an rss feed on my site</em><br>
+        C. Coyier, ‘How to Fetch and Parse RSS feeds in JavaScript’, 2020[Online]. Available: https://css-tricks.com/how-to-fetch-and-parse-rss-feeds-in-javascript/ [Accessed 10- Sept- 2021].</p>
+        <br>
+      </p>
+      <p><strong>Appendices: </strong>Site Map, Wireframes and Mockups</p><br>
+      <p>
+        <div>
+          <p><strong>Mobile Wireframes</strong></p><br>
+          <img src="src/Mobile_wireframes.jpg">
+          <br><br><br>
+          <p><strong>Desktop Wireframes</strong></p><br>
+          <img src="src/desktop-wireframes/Desktop-wireframe.1.jpg"><br><br>
+          <img src="src/desktop-wireframes/Desktop-wireframe.2.jpg"><br><br>
+          <img src="src/desktop-wireframes/Desktop-wireframe.3.jpg"><br><br>
+          <img src="src/desktop-wireframes/Desktop-wireframe.4.jpg"><br><br>
+          <img src="src/desktop-wireframes/Desktop-wireframe.5.jpg"><br><br>
+          <br>
+          <p><strong>Mockups</strong></p>
+          <p>Home Page</p>
+          <img src="src/mockups/Home-page-1.jpg"><br><br>
+          <img src="src/mockups/Home-page-2.jpg"><br><br>
+          <p>Meetups</p><br>
+          <img src="src/mockups/Meetups-1.jpg"><br><br>
+          <p>Challenges</p><br>
+          <img src="src/mockups/Challenge-1.jpg"><br><br>
+          <img src="src/mockups/Challenge-2.jpg"><br><br>
+          <p>Articles</p><br>
+          <img src="src/mockups/Articles-1.jpg"><br><br>
+          <p>Jobs</p><br>
+          <img src="src/mockups/Jobs-1.jpg"><br><br>
+
+        </div>
+      </p>
+
+      </div>
+  </body>
+</html>

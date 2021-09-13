@@ -1,3 +1,29 @@
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis enim sed nibh vestibulum interdum. Nunc suscipit quam eu bibendum dapibus. Maecenas sit amet sodales arcu. Curabitur convallis auctor mi, ac pulvinar elit pretium sed. Sed ullamcorper arcu non dui dignissim tincidunt. Nunc varius feugiat sem eget pulvinar. Fusce vel nunc nec elit ullamcorper ullamcorper et sed nisi. Duis commodo nunc eget vulputate convallis. Cras quis leo aliquet, tempus urna non, pharetra lacus. Maecenas quis aliquam nibh. In elementum dictum tincidunt.
+There are several common approaches to programming problems that it is helpful to know and understand.
 
-Pellentesque ipsum sapien, luctus feugiat convallis at, bibendum vitae erat. Fusce interdum risus eget hendrerit ornare. Nam gravida vestibulum enim et tincidunt. Nullam et molestie massa. Vivamus nec euismod risus. Sed vulputate at urna ut ultrices. Curabitur est ipsum, interdum in vestibulum sed, pharetra sed est. Vivamus ac elit ut quam sollicitudin mollis.
+In this post, we have decided on the most common ways to code, and discuss some techniques available after the jump.
+
+I've also compiled a fairly robust guide as well.
+
+A quick introduction to Haskell Programming
+
+Haskell is a programming language designed to be easy to learn. Some of my personal favourite examples are:
+
+Forth languages
+
+Foo languages
+
+It is sometimes suggested that the concepts of Haskell should be more closely associated with the language itself.
+
+However, even if the notion is that you'll always find the best of what you've seen on the stack, and that Haskell is easy enough to learn, you need to remember some of what it represents.
+
+How do we look at it?
+
+We can talk about the Haskell programming style, because the main concept is the same as the original.
+
+The syntax and style of Haskell can vary greatly depending on the source and implementation of the language and its community.
+
+The style often includes code that you might not know about, or that you might already have heard to get by.
+
+In practice, though, it gets even crazier, as we'll see, and become even more obvious when examining the documentation.
+
+Here, I'm describing the different definitions of the language and style, so that you have an idea of how it really applies to you.

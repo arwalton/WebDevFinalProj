@@ -1,25 +1,46 @@
+/*
+Handlebars in this code follows the example here very closely.
+Codecademy.com, ‘Templating with Handlebars cheatsheet’, 2021[Online]. Available: https://www.codecademy.com/learn/learn-handlebars/modules/templating-with-handlebars/cheatsheet [Accessed 20- Aug- 2021]
+*/
+
 //Compile and insert the handlebars template for previous meetups
 const meetupSource = document.getElementById('previous-meetups').innerHTML;
 const meetupFunc = Handlebars.compile(meetupSource);
-//TODO make a good list of previous topics and meetups right now it only shows upcoming ones
-const meetupContext = {meetup: [{title: "Sass and Less",
-    date: "02.09.2021",
-    description: "This week we\'ll be discussing and practicing using Sass and Less in your projects."},
-    {title: "CSS Frameworks",
-    date: "09.09.2021",
-    description: "This week\'s topic is introducing different CSS frameworks. We\'ll do some basic work with bootstrap"},
-    {title: "Bootstrap",
-    date: "16.09.2021",
-    description: "This week\'s topic is continuing with bootstrap and exploring other alternative frameworks, with their pros and cons."},
-    {title: "Package Managers",
-    date: "23.09.2021",
-    description: "This week\'s topic: bring your laptops, we\'ll be talking about package managers and how they can help you in your workflow."},
-    {title: "MEAN",
-    date: "30.09.2021",
-    description: "This week\'s topic is an introduction to MEAN stack. If you came last week for the discussion of package managers, we can use those to show you how quickly you can get a new development environments set up."},
-    {title: "LAMP",
-    date: "07.10.2021",
-    description: "Last week we talked about MEAN stack. This week we\'ll be talking about the other major option, LAMP stack."}]
+
+//Hard-coded list of previous meetups. If we were working with a real website I would query these
+//directly from google calendar.
+const meetupContext = {
+  meetup: [
+    {
+      title: 'CSS Frameworks',
+      date: '09.09.2021',
+      description:
+        "This week's topic is introducing different CSS frameworks. We'll do some basic work with bootstrap",
+    },
+    {
+      title: 'Sass and Less',
+      date: '02.09.2021',
+      description:
+        "This week we'll be discussing and practicing using Sass and Less in your projects.",
+    },
+    {
+      title: 'Basic CSS',
+      date: '26.08.2021',
+      description: "Let's talk about how to make that HTML start to look good.",
+    },
+    {
+      title: 'Basic HTML',
+      date: '19.08.2021',
+      description:
+        "We'll talk about what HTML is and why the whole web is based on it.",
+    },
+    {
+      title: 'Welcome back',
+      date: '12.08.2021',
+      description:
+        'This is our first meeting back in person. Remember your masks!',
+    },
+  ],
 };
 const meetupHtml = meetupFunc(meetupContext);
 const meetupsList = document.getElementById('meetups-list');

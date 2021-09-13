@@ -1,77 +1,97 @@
 <!DOCTYPE html>
 
-<html lang=eng>
-  
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Free Code Camp Helsinki</title>
-  
+
     <!--Include handlebars.js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" 
-    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!--Include Font Awesome-->
-    <script src="https://kit.fontawesome.com/3c500845f7.js" crossorigin="anonymous"></script>
-  
+    <script
+      src="https://kit.fontawesome.com/3c500845f7.js"
+      crossorigin="anonymous"
+    ></script>
+
     <meta name="description" content="Demo site for Free Code Camp Helsinki" />
     <!--Just a little homage to Terry Pratchett-->
     <!--This will fail the w3c validator, but it's a known issue.-->
     <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
 
-<body>
-  <header>
-    <nav id="nav">
+  <body>
+    <header>
+      <nav id="nav">
         <div class="nav-link-wrapper">
-          <a href="index.html"><i class="fas fa-home nav-icon"></i><p class="navText">Home</p></a>
+          <a href="index.html"
+            ><i class="fas fa-home nav-icon"></i>
+            <p class="navText">Home</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="meetups.html"><i class="fas fa-users nav-icon"></i><p class="navText">Meetups</p></a>
+          <a href="meetups.html"
+            ><i class="fas fa-users nav-icon"></i>
+            <p class="navText">Meetups</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="challenges.html"><i class="fas fa-question-circle nav-icon"></i><p class="navText">Challenges</p></a>            
+          <a href="challenges.html"
+            ><i class="fas fa-question-circle nav-icon"></i>
+            <p class="navText">Challenges</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="articles.html"><i class="fas fa-newspaper nav-icon"></i><p class="navText">Articles</p></a>
+          <a href="articles.html"
+            ><i class="fas fa-newspaper nav-icon"></i>
+            <p class="navText">Articles</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="jobs.html"><i class="fas fa-building nav-icon"></i><p class="navText">Jobs</p></a>
+          <a href="jobs.html"
+            ><i class="fas fa-building nav-icon"></i>
+            <p class="navText">Jobs</p></a
+          >
         </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main class="app">
-    <h1>Meetups</h1>
-    <iframe id="meetup-calendar"
-      title="Meetup Calendar"
-      src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FHelsinki&src=NXZjcmkxdGRzZHJydDBzY2JudWQ0Y2VwZ3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23F4511E"
-      scrolling="no"></iframe>
+    <main class="app">
+      <h1>Meetups</h1>
+      <!--This section embeds a google calendar with upcoming events into the page.-->
+      <iframe
+        id="meetup-calendar"
+        title="Meetup Calendar"
+        src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Europe%2FHelsinki&src=NXZjcmkxdGRzZHJydDBzY2JudWQ0Y2VwZ3NAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23F4511E"
+      ></iframe>
 
+      <!--This uses handlebars to generate a list of previous meetups-->
       <h2 id="prev-meetups">Previous meetups</h2>
       <ul id="meetups-list">
         <script id="previous-meetups" type="text/x-handlebars-template">
           {{#each meetup}}
-            <li class="meetup">
-              <div class="meetup-card">
-              <h3>{{this.title}}</h3>
-              <h4>{{this.date}}</h4>
-              <p>{{this.description}}</p>
+            <li class='meetup'>
+              <div class='meetup-card'>
+                <h3>{{this.title}}</h3>
+                <h4>{{this.date}}</h4>
+                <p>{{this.description}}</p>
               </div>
             </li>
           {{/each}}
         </script>
       </ul>
-  </main>
+    </main>
 
-  <footer>
-    <!--Run meetups.js first to do all the handlebars templating-->
-    <script src="scripts/meetups.js"></script>
-  </footer>
-</body>
-
-
+    <footer>
+      <!--Run meetups.js to do all the handlebars templating-->
+      <script src="scripts/meetups.js"></script>
+    </footer>
+  </body>
 </html>

@@ -1,122 +1,140 @@
 <!DOCTYPE html>
 
-<html lang=eng>
-  
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Free Code Camp Helsinki</title>
-  
+
     <!--Include handlebars.js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" 
-    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!--Include Font Awesome-->
-    <script src="https://kit.fontawesome.com/3c500845f7.js" crossorigin="anonymous"></script>
-  
+    <script
+      src="https://kit.fontawesome.com/3c500845f7.js"
+      crossorigin="anonymous"
+    ></script>
+
     <meta name="description" content="Demo site for Free Code Camp Helsinki" />
     <!--Just a little homage to Terry Pratchett-->
     <!--This will fail the w3c validator, but it's a known issue.-->
     <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
 
-<body>
-  <header>
-    <nav id="navbar">
+  <body>
+    <header>
+      <nav id="navbar">
         <div class="nav-link-wrapper">
-          <a href="index.html"><i class="fas fa-home nav-icon"></i><p class="navText">Home</p></a>
+          <a href="index.html"
+            ><i class="fas fa-home nav-icon"></i>
+            <p class="navText">Home</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="meetups.html"><i class="fas fa-users nav-icon"></i><p class="navText">Meetups</p></a>
+          <a href="meetups.html"
+            ><i class="fas fa-users nav-icon"></i>
+            <p class="navText">Meetups</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="challenges.html"><i class="fas fa-question-circle nav-icon"></i><p class="navText">Challenges</p></a>            
+          <a href="challenges.html"
+            ><i class="fas fa-question-circle nav-icon"></i>
+            <p class="navText">Challenges</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="articles.html"><i class="fas fa-newspaper nav-icon"></i><p class="navText">Articles</p></a>
+          <a href="articles.html"
+            ><i class="fas fa-newspaper nav-icon"></i>
+            <p class="navText">Articles</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="jobs.html"><i class="fas fa-building nav-icon"></i><p class="navText">Jobs</p></a>
+          <a href="jobs.html"
+            ><i class="fas fa-building nav-icon"></i>
+            <p class="navText">Jobs</p></a
+          >
         </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main class="app">
-    <h1>Welcome to Free Code Camp Helsinki</h1>
-    <hr>
-    <div>
-    <a id="meetup-main-link" href="meetups.html">
-      <h2>Upcoming Meetups</h2>
-    </a>
+    <main class="app">
+      <h1>Welcome to Free Code Camp Helsinki</h1>
+      <hr />
+      <div id="main-image">
+        <img
+          src="src/Laptop_with_code.jpg"
+          alt=""
+        />
+      </div>
+      <div>
+        <a id="meetup-main-link" href="meetups.html">
+          <h2>Upcoming Meetups</h2>
+        </a>
 
-    <ul id="meetup-scroll" class="scroll-wrapper full"></ul>
-      <script id="scroll-template" type="text/x-handlebars-template">
-        {{#each meetupList}}
-          <li class="card">
-            <h3>{{this.date}}</h3>
-            <p>{{this.info}}</p>
-          </li>
-        {{/each}}
-      </script>
-    </ul>
-  </div>
-    <div id="job-div">
-    <a id="jobs-link" href="jobs.html">Check out the latest jobs near
-      Helsinki</a>
-    
-    </div>
+        <ul id="meetup-scroll" class="scroll-wrapper full">
+          <script id="scroll-template" type="text/x-handlebars-template">
+            {{#each meetupList}}
+              <li class='card'>
+                <h3>{{this.date}}</h3>
+                <p>{{this.info}}</p>
+              </li>
+            {{/each}}
+          </script>
+        </ul>
+      </div>
+      <div id="job-div">
+        <a id="jobs-link" href="jobs.html"
+          >Check out the latest jobs near Helsinki</a
+        >
+      </div>
 
-    <div id="coding-challenge">
-    <h2>This week's coding challenge</h2>
-    <h3>Remove duplicates:</h3>
-    <p>
-      You are given a pointer to the head of a sorted,
-      single-linked list. The task is to remove any nodes with
-      duplicate values, so that each element only appears once in
-      the list. Find out more on our
-      <a href="challenges.html">challenges</a> page!
-    </p>
-    </div>
-
-    <div id="article-div">
-    <h2 id="article-heading">Featured Article</h2>
-      <script id="random-article" type="text/x-handlebars-template">
-        <h3>{{current.title}}</h3>
-        <p>{{current.content}}
-          <a id="article-link" href="articles.html">
-            ...continue reading
-          </a>
+      <div id="coding-challenge">
+        <h2>This week's coding challenge</h2>
+        <h3>Remove duplicates:</h3>
+        <p>
+          You are given a pointer to the head of a sorted, single-linked list.
+          The task is to remove any nodes with duplicate values, so that each
+          element only appears once in the list. Find out more on our
+          <a href="challenges.html">challenges</a> page!
         </p>
-      </script>
+      </div>
 
-  </div>
+      <div id="article-div">
+        <h2 id="article-heading">Featured Article</h2>
+        <script id="random-article" type="text/x-handlebars-template">
+          <h3>{{current.title}}</h3>
+          <p>{{current.content}}
+            <a id='article-link' href='articles.html'>
+              ...continue reading
+            </a>
+          </p>
+        </script>
+      </div>
 
-  <div id="about-us">
-    <h3>About us</h3>
-    <p>
-      Free Code Camp Helsinki is interested in helping people pay
-      more taxes. Specifically, we want to help you get an awesome,
-      well-paying job as a developer. We meet together every
-      couple weeks to learn the skills you need to start a new
-      career in software development.
+      <div id="about-us">
+        <h3>About us</h3>
+        <p>
+          Free Code Camp Helsinki is interested in helping people pay more
+          taxes. Specifically, we want to help you get an awesome, well-paying
+          job as a developer. We meet together every couple weeks to learn the
+          skills you need to start a new career in software development. We are
+          not officially affiliated with freecodecamp.com, but we love the work
+          that they do and often send our members their way. They have fantastic
+          resources over there, so check them out if you haven't already!
+        </p>
+      </div>
+    </main>
 
-      We are not officially affiliated with freecodecamp.com, but we
-      love the work that they do and often send our members their way.
-      They have fantastic resources over there, so check them out if
-      you haven't already!
-    </p>
-  </div>
-  </main>
-
-  <footer>
-    <!--Run main.js first to do all the handlebars templating-->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/horizontal-scroll.js"></script>
-  </footer>
-</body>
-
-
+    <footer>
+      <!--Run main.js first to do all the handlebars templating-->
+      <script src="scripts/main.js"></script>
+      <script src="scripts/horizontal-scroll.js"></script>
+    </footer>
+  </body>
 </html>

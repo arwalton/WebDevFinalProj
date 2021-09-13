@@ -1,482 +1,577 @@
-
 /*---------------Common CSS--------------*/
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    width: 100%; 
-    min-height: 100vh;
-    padding: 0;
-    background: hsl(37, 79%, 75%);
-    background: linear-gradient(0deg, hsl(13, 68%, 63%) 0%, hsl(37, 79%, 75%) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 0;
+  background: hsl(37, 79%, 75%); /*default background*/
+  /*actual background should be an orange/yellow gradient*/
+  background: linear-gradient(
+    0deg,
+    hsl(13, 68%, 63%) 0%,
+    hsl(37, 79%, 75%) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
+/*This gutter is used to create space for the side-scroller on the main page*/
 :root {
-    --gutter: 20px;
+  --gutter: 20px;
 }
 
-
+/*The main content is displayed with grid. It uses the gutter instead of simply
+adding a margin because that interacts better with the side-scroller.*/
 .app {
-    display: grid;
-    padding: var(--gutter) 0;
-    grid-gap: var(--gutter) 0;
-    grid-template-columns: 
-        var(--gutter)
-        1fr
-        var(--gutter);
-        align-content: start;
-}
-
-@media only screen and (min-width: 600px){
-    .app{
-    display: grid;
-    grid-gap: 10px;
-    padding: var(--gutter) 0;
-    grid-gap: var(--gutter) 0;
-    grid-template-columns:
+  display: grid;
+  padding: var(--gutter) 0;
+  grid-gap: var(--gutter) 0;
+  grid-template-columns:
     var(--gutter)
-    repeat(6, 1fr)
+    1fr
     var(--gutter);
+  align-content: start;
+}
+
+/*The site used mobile first design so responsiveness is handled in part using
+min-width queries*/
+@media only screen and (min-width: 720px) {
+  .app {
+    display: grid;
     grid-gap: 10px;
-    }
+    padding: var(--gutter) 0;
+    grid-gap: var(--gutter) 0;
+    /*The grid now has six center columns, instead of one large one*/
+    grid-template-columns:
+      var(--gutter)
+      repeat(6, 1fr)
+      var(--gutter);
+    grid-gap: 10px;
+  }
 }
 
-.app > *{    
-    grid-column: 2 / -2;
+/*accounts for the gutter columns*/
+.app > * {
+  grid-column: 2 / -2;
 }
 
+/* Used to make objects stretch full width over gutters*/
 .app > .full {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
-.app > div{
-    margin: 0;
-    padding: 0;
+/*The div allows for extra styling and control with grid, but it shouldn't have its
+own styling to interfere*/
+.app > div {
+  margin: 0;
+  padding: 0;
 }
 
-
-
-h1{
-   margin: auto;
-   padding: 0;
-   text-align: center;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 2em;
-   color: hsl(234, 20%, 15%);
+/* remove dots from all the unordered lists*/
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-
-h2{
-   margin: 0;
-   padding: 0;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 1.5em;
-   color: hsl(234, 20%, 15%);
+/*basic setup for the major heading and other semantic text elements*/
+h1 {
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2em;
+  color: hsl(234, 20%, 15%);
 }
 
-h3{
-   margin: 0;
-   padding: 0;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 1.2em;
-   color: hsl(234, 20%, 15%);
+h2 {
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5em;
+  color: hsl(234, 20%, 15%);
 }
 
-h4{
-   margin: 0;
-   padding: 0;
-   font-family: Arial, Helvetica, sans-serif;
-   font-size: 1em;
-   color: hsl(234, 20%, 15%);
+h3 {
+  margin: 0;
+  margin-bottom: 3px;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  color: hsl(234, 20%, 15%);
 }
 
-p{
-   margin: 0;
-   padding: 0;
-   font-family: Arial, Helvetica, sans-serif;
-   color: hsl(234, 20%, 15%);
+h4 {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  color: hsl(234, 20%, 15%);
 }
 
-p > a:link{
-    color:hsl(234, 20%, 25%);
+p {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(234, 20%, 15%);
 }
 
-p > a:active{
-    color:hsl(234, 20%, 50%);
+ol li {
+  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(234, 20%, 15%);
 }
 
-hr{
-    width: 90%;
-    height: 2px;
-    border-width: 1px;
-    border-color: hsl(234, 20%, 15%);
-    margin: auto;
-    padding: 0;
+/*Adjusting the colors of links in the document to match the color scheme*/
+/*TODO add these colors to jobs page*/
+p > a:link {
+  color: hsl(234, 20%, 25%);
+}
+
+p > a:active {
+  color: hsl(234, 20%, 50%);
+}
+
+/*Hr elements are used to add a horizontal line into the content*/
+hr {
+  width: 90%;
+  height: 2px;
+  border-width: 1px;
+  border-color: hsl(234, 20%, 15%);
+  margin: auto;
+  padding: 0;
 }
 
 /*----------------Header CSS--------------*/
+
+/*The header is fixed at the top of the screen*/
 header {
-    background: hsl(54, 50%, 96%);
-    top: 0;
-    position: sticky;
-    width: 100%;
-    z-index: 10000;
+  background: hsl(54, 50%, 96%);
+  top: 0;
+  position: sticky;
+  width: 100%;
+  z-index: 10000; /*Makes the header always on top*/
 }
 
-nav{
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+/*5 equal columns for the nav buttons*/
+nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
-.nav-link-wrapper{
-    display: grid;
-    text-align: center;
-    text-justify: center;
-    margin: 0;
-    padding: 0;
+/*This wrapper allows the links and the icons to be grouped together*/
+.nav-link-wrapper {
+  display: grid;
+  text-align: center;
+  text-justify: auto;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-link-wrapper a:link{
-    text-decoration: none;
+/*Basic behavior for the nav links when a user interacts with them*/
+.nav-link-wrapper a:link {
+  text-decoration: none;
 }
 
-.nav-link-wrapper a:visited{
-    text-decoration: none;
+.nav-link-wrapper a:visited {
+  text-decoration: none;
 }
 
-.nav-link-wrapper a:hover{
-    background-color: hsl(54, 50%, 80%);
+.nav-link-wrapper a:hover {
+  background-color: hsl(54, 50%, 80%);
 }
 
-.nav-link-wrapper a:active{
-    background-color: hsl(54, 50%, 70%)
+.nav-link-wrapper a:active {
+  background-color: hsl(54, 50%, 70%);
 }
 
-.nav-link-wrapper p{
-    font-size: small;
-    color: hsl(234, 20%, 30%);
-    margin: 0;
-    padding: 0 0 5px 0;
+/*Sets the text size and color for the text of the links*/
+.nav-link-wrapper p {
+  font-size: small;
+  color: hsl(234, 20%, 30%);
+  margin: 0;
+  padding: 0 0 5px 0;
 }
 
-.nav-icon{
-    font-size: xx-large;
-    color: hsl(234, 20%, 30%);
-    margin: 0;
-    padding: 5px 0 0 0;
+/*Sets the style for the icons over the nav text*/
+.nav-icon {
+  font-size: xx-large;
+  color: hsl(234, 20%, 30%);
+  margin: 0;
+  padding: 5px 0 0 0;
 }
 
 /*-------------index CSS------------*/
 
-#meetup-main-link{
-    text-decoration: none;
+/*styles the header for the meetups as a link to the meetups page*/
+#meetup-main-link {
+  text-decoration: none;
 }
 
-#meetup-main-link:link{
-    text-decoration: none;
+#meetup-main-link:link {
+  text-decoration: none;
 }
 
-#meetup-main-link:visited{
-    text-decoration: none;
+#meetup-main-link:visited {
+  text-decoration: none;
 }
 
-#meetup-main-link:hover h2{
-    color: hsl(234, 20%, 35%);
+#meetup-main-link:hover h2 {
+  color: hsl(234, 20%, 35%);
 }
 
-#meetup-main-link:active h2{
-    color: hsl(234, 20%, 10%);
+#meetup-main-link:active h2 {
+  color: hsl(234, 20%, 10%);
 }
 
-.scroll-wrapper{
-    display: grid;
-    position: relative;
-    grid-gap: calc(var(--gutter) / 2);
-    grid-template-columns: 
-        10px
-        repeat(var(--total), calc(50% - var(--gutter) * 2))
-        10px;
-    grid-template-rows: minmax(150px, 1fr);
-    overflow-x: scroll;
-    overflow-y: hidden;
-    margin-top: 0px;
-    padding-bottom: calc(.75 * var(--gutter));
-    margin-bottom: calc(-.25 * var(--gutter));
-    /*click and drag scroll*/
-    transition: all 0.2s;
-    transform: scale(0.98);
-    will-change: transform;
-    user-select: none;
-    cursor: pointer;
-    /*hide scroll bar*/
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+#main-image img {
+  width: 100%;
+  height: auto;
 }
 
-.scroll-wrapper::-webkit-scrollbar{
-    display: none;
+/*This styling lets the upcoming meetups scroll smoothly*/
+.scroll-wrapper {
+  display: grid;
+  position: relative;
+  grid-gap: calc(var(--gutter) / 2);
+  grid-template-columns:
+    10px
+    repeat(var(--total), calc(50% - var(--gutter) * 2))
+    10px;
+  grid-template-rows: minmax(150px, 1fr);
+  overflow-x: scroll; /*scrolls in the x direction but hidden in the y*/
+  overflow-y: hidden;
+  margin-top: 0px;
+  padding-bottom: calc(0.75 * var(--gutter));
+  margin-bottom: calc(-0.25 * var(--gutter));
+  /*click and drag scroll*/
+  transition: all 0.2s;
+  /*Scroll bar starts very slightly scaled down.*/
+  transform: scale(0.98);
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+  /*hide scroll bar*/
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.scroll-wrapper.active{
-    cursor: grabbing;
-    cursor: -webkit-grabbing;
-    transform: scale(1);
+/*hides scroll bar in chrome, safari, etc*/
+.scroll-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
+/*Slightly enlarges the scroll when clicked to indicate that it's active*/
+.scroll-wrapper.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+
+/*Adds a gap before and after scroll bar to show end of scroll*/
 .scroll-wrapper::before,
 .scroll-wrapper::after {
-    content: '';
+  content: '';
 }
 
+/*Positions the actual items in the horizontal scroll*/
 .scroll-wrapper > li,
 .item {
-    scroll-snap-align: center;
-    padding: calc(var(--gutter) / 2 * 1.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
+  scroll-snap-align: center;
+  padding: calc(var(--gutter) / 2 * 1.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
 }
 
+/*Each item on the scroll is a card, so this section adds styling for the cards*/
 .card {
-    background:hsl(234, 20%, 30%);
+  background: hsl(234, 20%, 30%);
 }
 
-.card > *{
-    color:hsl(54, 50%, 90%);
+.card > * {
+  color: hsl(54, 50%, 90%);
 }
 
-.card h3{
-    position: absolute;
-    top: 20px;
+.card h3 {
+  position: absolute;
+  top: 20px;
 }
 
-ul{
-    list-style: none;
-    padding: 0;
+/*This section styles the link so that it looks and behaves more like a button*/
+#jobs-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(151, 28%, 70%);
+  color: hsl(234, 20%, 15%);
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+  border: 5px solid hsl(234, 20%, 70%); /*Thick border for the button*/
+  border-radius: 10px;
+  padding: 10px;
+
+  /*Sets transition time for changing the background color*/
+  -webkit-transition: background-color 100ms linear;
+  -moz-transition: background-color 100ms linear;
+  -o-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
 }
 
-#jobs-link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: hsl(151, 28%, 70%);
-    color:hsl(234, 20%, 15%);
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.3em;
-    border: 5px solid hsl(234, 20%, 70%);
-    border-radius: 10px;
-    padding: 10px;
-
-    -webkit-transition: background-color 100ms linear;
-    -moz-transition: background-color 100ms linear;
-    -o-transition: background-color 100ms linear;
-    -ms-transition: background-color 100ms linear;
-    transition: background-color 100ms linear;
+/*No text decoration so that it looks like a button*/
+a:link#jobs-link {
+  text-decoration: none;
 }
 
-a:link#jobs-link{
-    text-decoration: none;
+a:visited#jobs-link {
+  text-decoration: none;
 }
 
-a:visited#jobs-link{
-    text-decoration: none;
+/*On hove the background color becomes the same as the border color.*/
+a:hover#jobs-link {
+  background-color: hsl(234, 20%, 70%);
 }
 
-a:hover#jobs-link{
-    background-color: hsl(234, 20%, 70%);
+/*On click, the border disappers so that the link looks like it shrinks.
+This gives a sense of a button actually being pushed.*/
+a:active#jobs-link {
+  border-color: transparent;
+  background-clip: padding-box;
 }
 
-a:active#jobs-link{
-    border-color: transparent;
-    background-clip: padding-box;
-}
-
+/*Creating three similar sections for the rest of the page*/
 #coding-challenge,
 #article-div,
-#about-us{
-    border: 1px solid hsl(234, 20%, 25%);
-    border-radius: 5px;
-    padding: 5px;
-    background-color: hsl(54, 50%, 90%);
+#about-us {
+  border: 1px solid hsl(234, 20%, 25%);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: hsl(54, 50%, 90%);
 }
 
-@media only screen and (min-width: 600px){
-    #job-div{
-        margin-bottom: 10px;
-    }
+/*This media query changes the layout of the last elements from being stacked to
+being side-by-side*/
+@media only screen and (min-width: 720px) {
+  #job-div {
+    margin-bottom: 10px;
+  }
 
-    #coding-challenge{
-        grid-column: 2 / 5;
-    }
+  #coding-challenge {
+    grid-column: 2 / 5;
+  }
 
-    #article-div{
-        grid-column: 5 / -2;
-    }
+  #article-div {
+    grid-column: 5 / -2;
+  }
 }
 
 /*------------meetups CSS-------------*/
-#meetup-calendar{
-    height: 400px;
-    width: 100%;
-    margin: auto;
-    border: 1px solid hsl(234, 20%, 15%)
+/*Basic styling of the embedded calendar*/
+#meetup-calendar {
+  height: 400px;
+  width: 100%;
+  margin: auto;
+  border: 1px solid hsl(234, 20%, 15%);
+  overflow: hidden;
 }
 
-.meetup-card{
-    border: 1px solid hsl(234, 20%, 25%);
-    height: 100%;
-    border-radius: 4px;
-    margin: 5px;
-    padding: 5px;
-    background:hsl(54, 50%, 90%);
+/*Styling the meetup cards*/
+.meetup-card {
+  border: 1px solid hsl(234, 20%, 25%);
+  height: 100%;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 5px;
+  background: hsl(54, 50%, 90%);
 }
 
-.meetup-card > h3{
-    margin-bottom: 10px;
+/*Adding the proper spacing between elements*/
+.meetup-card > h3 {
+  margin-bottom: 10px;
 }
 
-.meetup-card h4{
-    margin-bottom: 5px;
+.meetup-card h4 {
+  margin-bottom: 5px;
 }
 
-#prev-meetups{
-    margin-top: 20px;
-    margin-bottom: 0;
-    text-decoration: underline;
+#prev-meetups {
+  margin-top: 20px;
+  margin-bottom: 0;
+  text-decoration: underline;
 }
 
-@media only screen and (min-width: 600px){
-    #meetups-list{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        row-gap: 10px;
-        list-style-type: none;
-    }
+/*Changes the items from being stacked to being in two columns.*/
+@media only screen and (min-width: 720px) {
+  #meetups-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    list-style-type: none;
+  }
 }
 
 /*-----------challenges CSS------------*/
 /*TODO, clip the image Properly. Might be easier to edit it outside and pre-cut it.*/
-figure img{
-    width: 100%;
-    clip-path: polygon(10% 10%,90% 10%,90% 90%,10% 90%);
+figure img {
+  width: 100%;
+  /*clip-path allows me to specify a polygon to clip an image*/
+  clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
 }
 
-#hint-wrapper h3{
-    margin-bottom: 15px;
+#hint-wrapper h3 {
+  margin-bottom: 15px;
 }
 
-.accordion-hint{
-    background-color: hsl(234, 20%, 70%);
-    cursor: pointer;
-    padding: 15px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
+/*Adds stying to the accordion at the bottom*/
+.accordion-hint {
+  background-color: hsl(234, 20%, 70%);
+  cursor: pointer;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
 }
 
-.accordion-hint.active{
-    background-color: hsl(234, 20%, 50%);
+/*Changes background color of the active accordion button*/
+.accordion-hint.active {
+  background-color: hsl(234, 20%, 50%);
 }
 
+/*Styles the hints that can be accessed by the accordion buttons*/
 .hint {
-    padding: 0 15px;
-    background-color:hsl(54, 50%, 90%);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+  padding: 0 15px;
+  background-color: hsl(54, 50%, 90%);
+  max-height: 0;
+  /*They all start out hidden because the accordion is closed*/
+  overflow: hidden;
+  /*adds a gradual transition to the accordion opening.*/
+  transition: max-height 0.3s ease-out;
 }
 
-.hint>p{
-    padding: 15px;
+.hint > p {
+  padding: 15px;
 }
 
 /*----------------Articles CSS---------------*/
 
-#articles{
-    overflow: hidden;
+/*This is needed to hide articles when the topic sort is used*/
+#articles {
+  overflow: hidden;
 }
 
-.article-wrapper{
-    display: none; /* default is hidden */
-    margin-bottom: 20px;
-    border: 1px solid hsl(234, 20%, 25%);
-    border-radius: 5px;
-    padding: 5px;
-    background-color: hsl(54, 50%, 90%);
+.article-wrapper {
+  display: none; /* default is hidden */
+  margin-bottom: 20px;
+  border: 1px solid hsl(234, 20%, 25%);
+  border-radius: 5px;
+  padding: 5px;
+  background-color: hsl(54, 50%, 90%);
 }
 
-.article-wrapper h3{
-    margin-bottom: 10px;
+.article-wrapper h3 {
+  margin-bottom: 10px;
 }
 
 /* the show class is toggled on elements as they are filtered */
-.show{
-    display: block;
+.show {
+  display: block;
 }
 
-#topic-list{
-    display: grid;
-    grid-template-columns: 5px repeat(5, 1fr) 5px;
-    grid-gap: 10px
+/*Creates a basic grid menu for the topic buttons*/
+#topic-list {
+  display: grid;
+  grid-template-columns: 5px repeat(5, 1fr) 5px;
+  grid-gap: 10px;
 }
 
+/*Adds a small gap before and after the buttons*/
 #topic-list::before,
-#topic-list::after{
-    content:'';
+#topic-list::after {
+  content: '';
 }
 
-.topic-button{
-    background-color: hsl(234, 20%, 50%);
-    color: hsl(54, 50%, 90%);
-    width: 100%;
-    height: 50px;
-    font-size: .9em;
+/*Styles the topic buttons*/
+.topic-button {
+  background-color: hsl(234, 20%, 50%);
+  color: hsl(54, 50%, 90%);
+  width: 100%;
+  height: 50px;
+  font-size: 0.9em;
 }
 
+/*When a button is hovered on or clicked it changes color.*/
 .topic-button.active,
-.topic-button:hover{
-    background-color: hsl(234, 20%, 30%);
+.topic-button:hover {
+  background-color: hsl(234, 20%, 30%);
 }
 
-@media only screen and (min-width: 600px){
-    #topic-menu{
-        grid-column: 2 / 3;
-        display: grid;
-        grid-template-areas: 
-        'title'
-        'list';
-        border-right: 1px solid black;
-        grid-auto-rows: min-content;
-    }
+/*Moves the topic menu from the top to the side when the screen gets too large*/
+@media only screen and (min-width: 720px) {
+  #topic-menu {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-areas:
+      'title'
+      'list';
+    border-right: 1px solid black;
+    grid-auto-rows: min-content;
+  }
 
-    #topic-menu > h2{
-        grid-area: 'title';
-        width: 95%;
-    }
-    
-    #article-wrapper{
-        grid-column: 3 / -2;
-    }
+  /*Changes the spacing for the menu*/
+  #topic-menu > h2 {
+    grid-area: 'title';
+    width: 95%;
+  }
 
-    #topic-list{
-        grid-area: 'list';
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 50px);
-        width: 90%
-    }
+  /*places the articles in the proper grid-columns*/
+  #article-wrapper {
+    grid-column: 3 / -2;
+  }
+
+  /*re-does the topic-list grid to be vertical instead of horizontal*/
+  #topic-list {
+    grid-area: 'list';
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 50px);
+    width: 90%;
+  }
+
+  /*removes the extra spacing before and after the topics list*/
+  #topic-list::before,
+  #topic-list::after {
+    content: none;
+  }
 }
 
 /*---------------Jobs CSS---------------*/
 
+/*Styles the feed items returned from the script*/
+.feed-item-title {
+  border-top: 1px solid black;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
 
+/*Changes the display from being vertically stacked to being in a 3 column grid.*/
+@media only screen and (min-width: 720px) {
+  #jobs-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+}
+
+/*---------------Report CSS-----------*/
+#report-div {
+  margin: 15px;
+}

@@ -1,107 +1,141 @@
 <!DOCTYPE html>
 
-<html lang=eng>
-  
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Free Code Camp Helsinki</title>
-  
+
     <!--Include handlebars.js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" 
-    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+      integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <!--Include Font Awesome-->
-    <script src="https://kit.fontawesome.com/3c500845f7.js" crossorigin="anonymous"></script>
-  
+    <script
+      src="https://kit.fontawesome.com/3c500845f7.js"
+      crossorigin="anonymous"
+    ></script>
+
     <meta name="description" content="Demo site for Free Code Camp Helsinki" />
     <!--Just a little homage to Terry Pratchett-->
     <!--This will fail the w3c validator, but it's a known issue.-->
     <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
 
-<body>
-  <header>
-    <nav id="nav">
+  <body>
+    <header>
+      <nav id="nav">
         <div class="nav-link-wrapper">
-          <a href="index.html"><i class="fas fa-home nav-icon"></i><p class="navText">Home</p></a>
+          <a href="index.html"
+            ><i class="fas fa-home nav-icon"></i>
+            <p class="navText">Home</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="meetups.html"><i class="fas fa-users nav-icon"></i><p class="navText">Meetups</p></a>
+          <a href="meetups.html"
+            ><i class="fas fa-users nav-icon"></i>
+            <p class="navText">Meetups</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="challenges.html"><i class="fas fa-question-circle nav-icon"></i><p class="navText">Challenges</p></a>            
+          <a href="challenges.html"
+            ><i class="fas fa-question-circle nav-icon"></i>
+            <p class="navText">Challenges</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="articles.html"><i class="fas fa-newspaper nav-icon"></i><p class="navText">Articles</p></a>
+          <a href="articles.html"
+            ><i class="fas fa-newspaper nav-icon"></i>
+            <p class="navText">Articles</p></a
+          >
         </div>
         <div class="nav-link-wrapper">
-          <a href="jobs.html"><i class="fas fa-building nav-icon"></i><p class="navText">Jobs</p></a>
+          <a href="jobs.html"
+            ><i class="fas fa-building nav-icon"></i>
+            <p class="navText">Jobs</p></a
+          >
         </div>
-    </nav>
-  </header>
+      </nav>
+    </header>
 
-  <main class="app">
-    <h1>Weekly Challenge</h1>
-    <div id="weekly-challenge">
-      <h2>Removing duplicates from a sorted list.</h2>
-      <p>You are given a pointer to the head of a sorted,
-        single-linked list. The task is to remove any nodes with
-        duplicate values, so that each element only appears once in
-        the list.</p>
-      <br>
-      <p>Discuss this problem on 
-        <a href="https://www.facebook.com/groups/free.code.camp.helsinki/">Facebook</a>.</p>
-      <figure class="challenge-example">
-          <img src="src/Challenge example.jpg"
-          alt="A figure showing four nodes in the first list with a duplicate, and then a second list with 3 nodes where the duplicate is removed.">
-        <figcaption>Example: You need to remove one of the nodes with the value 3 from the first list and return the second list.</figcaption>
-      </figure>
-    </div>
+    <main class="app">
+      <!--This presents the challenge for people to try and discuss with each other-->
+      <h1>Weekly Challenge</h1>
+      <div id="weekly-challenge">
+        <h2>Removing duplicates from a sorted list.</h2>
+        <p>
+          You are given a pointer to the head of a sorted, single-linked list.
+          The task is to remove any nodes with duplicate values, so that each
+          element only appears once in the list.
+        </p>
+        <br />
+        <!--Link them to the facebook page instead of hosting our own forum-->
+        <p>
+          Discuss this problem on
+          <a href="https://www.facebook.com/groups/free.code.camp.helsinki/"
+            >Facebook</a
+          >.
+        </p>
+        <figure class="challenge-example">
+          <img
+            src="src/Challenge_example.jpg"
+            alt="A figure showing four nodes in the first list with a duplicate, and then a second list with 3 nodes where the duplicate is removed."
+          />
+          <figcaption>
+            Example: You need to remove one of the nodes with the value 3 from
+            the first list and return the second list.
+          </figcaption>
+        </figure>
+      </div>
 
-    <!--TODO Add real text and a real solution-->
-    <div id="hint-wrapper">
-    <h3>Need a hint?</h3>
-    <button class="accordion-hint"><i class="fas fa-chevron-right"></i> Hint 1</button>
-    <div class="hint">
-      <p>This is the first hint. Lorem ipsum dolor sit amet, consectetur 
-        adipiscing elit. Mauris non nibh sit amet nunc pulvinar vulputate. 
-        Etiam ac nunc varius, varius nunc eu, hendrerit lectus. Cras suscipit 
-        mauris non tellus posuere ultricies. Integer ac accumsan metus. In 
-        pellentesque, mauris nec condimentum ullamcorper, nunc eros vehicula 
-        odio, eget consequat metus mi eu nunc.</p>
-    </div>
+      <!--This section is an accordion menu that allows you to show and hide hints.-->
+      <div id="hint-wrapper">
+        <h3>Need a hint?</h3>
+        <button class="accordion-hint">
+          <i class="fas fa-chevron-right"></i> Hint 1
+        </button>
+        <div class="hint">
+          <p>
+            First think about how to iterate through the linked list. What
+            algorithm could you use?
+          </p>
+        </div>
 
-    <button class="accordion-hint"><i class="fas fa-chevron-right"></i> Hint 2</button>
-    <div class="hint">
-      <p>This is the second hint. Lorem ipsum dolor sit amet, consectetur 
-        adipiscing elit. Mauris non nibh sit amet nunc pulvinar vulputate. 
-        Etiam ac nunc varius, varius nunc eu, hendrerit lectus. Cras suscipit 
-        mauris non tellus posuere ultricies. Integer ac accumsan metus. In 
-        pellentesque, mauris nec condimentum ullamcorper, nunc eros vehicula 
-        odio, eget consequat metus mi eu nunc.</p>
-    </div>
+        <button class="accordion-hint">
+          <i class="fas fa-chevron-right"></i> Hint 2
+        </button>
+        <div class="hint">
+          <p>
+            Once you can iterate through the list, try to find a way to check
+            for duplicates. Remeber to watch out for the edges. It's easy to
+            accidentally try and read an undefined/null value on the end of the
+            list.
+          </p>
+        </div>
 
-    <button class="accordion-hint"><i class="fas fa-chevron-right"></i> Hint 3</button>
-    <div class="hint">
-      <p>This is the third hint. Lorem ipsum dolor sit amet, consectetur 
-        adipiscing elit. Mauris non nibh sit amet nunc pulvinar vulputate. 
-        Etiam ac nunc varius, varius nunc eu, hendrerit lectus. Cras suscipit 
-        mauris non tellus posuere ultricies. Integer ac accumsan metus. In 
-        pellentesque, mauris nec condimentum ullamcorper, nunc eros vehicula 
-        odio, eget consequat metus mi eu nunc.</p>
-    </div>
-    </div>
-  </main>
+        <button class="accordion-hint">
+          <i class="fas fa-chevron-right"></i> Hint 3
+        </button>
+        <div class="hint">
+          <p>
+            Once you can find duplicates, try to remove one without accidentally
+            losing the rest of the list. Make sure that the previous node now
+            points to the removed node's next. Remember, you can chain
+            statements together to access furthers levels of depth, i.e.
+            this.next.next = the next node of the next node.
+          </p>
+        </div>
+      </div>
+    </main>
 
-  <footer>
-    <!--Run this script to add logic to accordion.-->
-    <script src="scripts/accordion.js"></script>
-  </footer>
-</body>
-
-
+    <footer>
+      <!--Run this script to add logic to accordion.-->
+      <script src="scripts/accordion.js"></script>
+    </footer>
+  </body>
 </html>
