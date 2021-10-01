@@ -37,7 +37,6 @@ async function fetchFiles() {
       //Create a new object from the file
       const obj = new Object();
       obj.title = fileNames[i][2].toUpperCase() + fileNames[i].slice(3, -4);
-      console.log(obj.title);
       obj.class = fileNames[i + 1];
       obj.text = file;
       //Add the object to the files array
