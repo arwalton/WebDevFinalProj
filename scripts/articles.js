@@ -11,7 +11,7 @@ Handlebars template.
 async function fetchFileNames() {
   try {
     //get the file
-    const response = await fetch('../src/articles/filenames.csv');
+    const response = await fetch('https://arwalton.github.io/WebDevFinalProj/src/articles/filenames.csv');
     //keep only the text
     const fileString = await response.text();
     //extract the names of the files into an array by splitting the csv.
@@ -32,7 +32,7 @@ async function fetchFiles() {
     //iterate through fileNames and fetch actual articles
     for (let i = 2; i < fileNames.length; i += 2) {
       //Get each file
-      const response = await fetch('../src/articles/' + fileNames[i]);
+      const response = await fetch('https://arwalton.github.io/WebDevFinalProj/src/articles/' + fileNames[i]);
       const file = await response.text();
       //Create a new object from the file
       const obj = new Object();
