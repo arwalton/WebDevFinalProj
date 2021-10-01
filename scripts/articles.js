@@ -11,7 +11,7 @@ Handlebars template.
 async function fetchFileNames() {
   try {
     //get the file
-    const response = await fetch('https://arwalton.github.io/WebDevFinalProj/src/articles/filenames.csv');
+    const response = await fetch('/src/articles/filenames.csv');
     //keep only the text
     const fileString = await response.text();
     //extract the names of the files into an array by splitting the csv.
